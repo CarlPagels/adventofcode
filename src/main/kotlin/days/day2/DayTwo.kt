@@ -1,8 +1,7 @@
 package days.day2
 
 import days.Day
-import days.day2.options.createOption
-import days.readFile
+import days.day2.game.getGame
 
 /*
 What I play: A for Rock, B for Paper, and C for Scissors.
@@ -19,19 +18,10 @@ class DayTwo : Day {
     }
 
     private fun partOne(): Int {
-        val rounds = getRounds()
-        return Game(1).playGame(rounds)
+        return getGame(1).playGame()
     }
 
     private fun partTwo(): Int {
-        val rounds = getRounds()
-        return Game(2).playGame(rounds)
+        return getGame(2).playGame()
     }
-
-    private fun getRounds() = readFile("src/main/kotlin/days/day2/input.txt")
-        .split("\n")
-        .map {
-            it.split("\\s".toRegex())
-                .map(::createOption)
-        }
 }
