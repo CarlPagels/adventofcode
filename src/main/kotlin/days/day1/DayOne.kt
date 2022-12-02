@@ -1,11 +1,13 @@
 package days.day1
 
 import days.Day
-import getElfCalories
+import days.readFile
+import days.removeNewLines
 
 class DayOne : Day {
 
     override fun run() {
+        println("Day one")
         println("Part one: ${partOne()}")
         println("Part two: ${partTwo()}")
 
@@ -19,6 +21,19 @@ class DayOne : Day {
         return getElfCalories()
             .sortedByDescending { it }
             .take(3)
+            .reduce { acc, calories -> acc + calories }
+    }
+
+    private fun getElfCalories(): List<Int> {
+        return readFile("src/main/kotlin/days/day1/input.txt")
+            .split("\n\n")
+            .map { removeNewLines(it) }
+            .map(::sumCalories)
+    }
+
+    private fun sumCalories(line: String): Int {
+        return line.split(",")
+            .map { it.toInt() }
             .reduce { acc, calories -> acc + calories }
     }
 }
