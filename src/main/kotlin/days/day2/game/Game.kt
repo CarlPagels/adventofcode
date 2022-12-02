@@ -21,7 +21,7 @@ open class Game {
         return 0
     }
 
-    private fun getRounds() = readFile("src/main/kotlin/days/day2/input.txt")
+    private fun getRounds() = readFile("day2.txt")
         .split("\n")
         .map {
             it.split("\\s".toRegex())

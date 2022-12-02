@@ -25,7 +25,7 @@ class DayOne : Day {
     }
 
     private fun getElfCalories(): List<Int> {
-        return readFile("src/main/kotlin/days/day1/input.txt")
+        return readFile("day1.txt")
             .split("\n\n")
             .map { removeNewLines(it) }
             .map(::sumCalories)

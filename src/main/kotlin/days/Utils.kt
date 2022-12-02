@@ -7,5 +7,5 @@ fun removeNewLines(line: String): String {
 }
 
 fun readFile(filePath: String): String {
-    return File(filePath).readText()
+    return File("src/main/kotlin/inputfiles/$filePath").readText()
 }
