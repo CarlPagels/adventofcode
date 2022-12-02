@@ -1,17 +1,20 @@
 package days.day2.options
 
-class Rock: Option() {
+class Rock: Option {
+    override val score: Int = 1
+    override val keys: List<String> = listOf("A", "X")
 
-    override val score: Int
-        get() = 1
-    override val keys: List<String>
-        get() = listOf("A", "X")
-    override val winsAgainst: String
-        get() = "Z"
-    override val losesTo: String
-        get() = "Y"
-    override val drawsTo: String
-        get() = "X"
+    override fun winsAgainst(otherOption: Option): Boolean {
+        return otherOption is Scissors
+    }
+
+    override fun losesTo(otherOption: Option): Boolean {
+        return otherOption is Paper
+    }
+
+    override fun drawsTo(otherOption: Option): Boolean {
+        return otherOption is Rock
+    }
 
     override fun toString(): String {
         return "Rock"

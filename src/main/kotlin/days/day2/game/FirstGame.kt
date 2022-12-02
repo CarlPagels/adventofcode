@@ -5,9 +5,9 @@ import days.day2.options.*
 class FirstGame: Game() {
     override fun play(myOption: Option, theirOption: Option): Int {
         return when {
-            myOption.keys.any { theirOption.losesTo == it } -> return myOption.score + 6
-            myOption.keys.any { theirOption.drawsTo == it } -> return myOption.score + 3
-            myOption.keys.any { theirOption.winsAgainst == it } -> return myOption.score + 0
+            myOption.winsAgainst(theirOption) -> myOption.score + 6
+            myOption.drawsTo(theirOption) -> myOption.score + 3
+            myOption.losesTo(theirOption) -> myOption.score
             else -> 0
         }
     }
