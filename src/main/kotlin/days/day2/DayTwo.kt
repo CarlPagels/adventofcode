@@ -1,7 +1,9 @@
 package days.day2
 
 import days.Day
-import days.day2.game.getGame
+import days.day2.game.playGame
+import days.day2.options.createOption
+import days.readFile
 
 /*
 What I play: A for Rock, B for Paper, and C for Scissors.
@@ -18,10 +20,17 @@ class DayTwo : Day {
     }
 
     private fun partOne(): Int {
-        return getGame(1).playGame()
+        return playGame(getRounds(), 1)
     }
 
     private fun partTwo(): Int {
-        return getGame(2).playGame()
+        return playGame(getRounds(), 2)
     }
+
+    private fun getRounds() = readFile("day2.txt")
+        .split("\n")
+        .map {
+            it.split("\\s".toRegex())
+                .map(::createOption)
+        }
 }

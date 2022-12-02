@@ -7,7 +7,7 @@ import days.day2.options.Scissors
 
 class SecondGame: Game() {
 
-    override fun play(myOption: Option, theirOption: Option): Int {
+    override fun calculateScore(myOption: Option, theirOption: Option): Int {
         val gameResult = when(myOption) {
             is Rock -> "Loss"
             is Paper -> "Draw"

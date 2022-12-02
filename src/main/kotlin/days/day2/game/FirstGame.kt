@@ -3,7 +3,7 @@ package days.day2.game
 import days.day2.options.*
 
 class FirstGame: Game() {
-    override fun play(myOption: Option, theirOption: Option): Int {
+    override fun calculateScore(myOption: Option, theirOption: Option): Int {
         return when {
             myOption.winsAgainst(theirOption) -> myOption.score + 6
             myOption.drawsTo(theirOption) -> myOption.score + 3

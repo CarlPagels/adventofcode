@@ -1,12 +1,11 @@
 package days.day2.game
 
 import days.day2.options.*
-import days.readFile
 
 open class Game {
 
-    fun playGame(): Int {
-        return getRounds()
+    fun playGame(rounds: List<List<Option>>): Int {
+        return rounds
             .map { playRound(it) }
             .reduce { acc, score -> acc + score }
     }
@@ -14,17 +13,10 @@ open class Game {
     private fun playRound(round: List<Option>): Int {
         val theirOption = round[0]
         val myOption = round[1]
-        return play(myOption, theirOption)
+        return calculateScore(myOption, theirOption)
     }
 
-    open fun play(myOption: Option, theirOption: Option): Int {
+    open fun calculateScore(myOption: Option, theirOption: Option): Int {
         return 0
     }
-
-    private fun getRounds() = readFile("day2.txt")
-        .split("\n")
-        .map {
-            it.split("\\s".toRegex())
-                .map(::createOption)
-        }
 }
