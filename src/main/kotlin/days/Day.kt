@@ -1,6 +1,6 @@
 package days
 
 interface Day {
-    fun run() {
-    }
+    fun partOne(): Int
+    fun partTwo(): Int
 }

@@ -6,18 +6,11 @@ import days.removeNewLines
 
 class DayOne : Day {
 
-    override fun run() {
-        println("Day one")
-        println("Part one: ${partOne()}")
-        println("Part two: ${partTwo()}")
-
-    }
-
-    private fun partOne(): Int {
+    override fun partOne(): Int {
         return getElfCalories().maxOf { it }
     }
 
-    private fun partTwo(): Int {
+    override fun partTwo(): Int {
         return getElfCalories()
             .sortedByDescending { it }
             .take(3)

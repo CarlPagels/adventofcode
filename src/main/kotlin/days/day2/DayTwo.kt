@@ -13,17 +13,11 @@ What u play: X for Rock, Y for Paper, and Z for Scissors
 
 class DayTwo : Day {
 
-    override fun run() {
-        println("Day two")
-        println("Part one: ${partOne()}")
-        println("Part two: ${partTwo()}")
-    }
-
-    private fun partOne(): Int {
+    override fun partOne(): Int {
         return playGame(getRounds(), 1)
     }
 
-    private fun partTwo(): Int {
+    override fun partTwo(): Int {
         return playGame(getRounds(), 2)
     }
 
