@@ -14,19 +14,19 @@ class DayOne : Day {
         return getElfCalories()
             .sortedByDescending { it }
             .take(3)
-            .reduce { acc, calories -> acc + calories }
+            .sumCalories()
     }
 
     private fun getElfCalories(): List<Int> {
         return readFile("day1.txt")
             .split("\n\n")
-            .map { removeNewLines(it) }
+            .map(String::removeNewLines)
             .map(::sumCalories)
     }
 
     private fun sumCalories(line: String): Int {
         return line.split(",")
             .map { it.toInt() }
-            .reduce { acc, calories -> acc + calories }
+            .sumCalories()
     }
 }
