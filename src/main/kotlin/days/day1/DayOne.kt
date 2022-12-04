@@ -7,7 +7,7 @@ import days.removeNewLines
 class DayOne : Day {
 
     override fun partOne(): Int {
-        return getElfCalories().maxOf { it }
+        return getElfCalories().max()
     }
 
     override fun partTwo(): Int {
@@ -20,7 +20,7 @@ class DayOne : Day {
     private fun getElfCalories(): List<Int> {
         return readFile("day1.txt")
             .split("\n\n")
-            .map(String::removeNewLines)
+            .removeNewLines()
             .map(::sumCalories)
     }
 
