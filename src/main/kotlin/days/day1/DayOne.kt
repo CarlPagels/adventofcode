@@ -3,18 +3,21 @@ package days.day1
 import days.Day
 import days.readFile
 import days.removeNewLines
+import days.sumCalories
 
 class DayOne : Day {
 
-    override fun partOne(): Int {
+    override fun partOne(): String {
         return getElfCalories().max()
+            .toString()
     }
 
-    override fun partTwo(): Int {
+    override fun partTwo(): String {
         return getElfCalories()
             .sortedByDescending { it }
             .take(3)
             .sumCalories()
+            .toString()
     }
 
     private fun getElfCalories(): List<Int> {

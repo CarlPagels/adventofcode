@@ -5,16 +5,18 @@ import days.readFile
 
 class DayThree : Day {
 
-    override fun partOne(): Int {
+    override fun partOne(): String {
         val scores = getRucksacks()
             .map(Rucksack::getScores)
         return scores.reduce { acc, score -> acc + score }
+            .toString()
     }
 
-    override fun partTwo(): Int {
+    override fun partTwo(): String {
         return getGroups()
             .map(Group::findCommonItem)
             .reduce { acc, score -> acc + score }
+            .toString()
 
     }
 

@@ -1,5 +1,7 @@
 package days.day3
 
+import days.toScore
+
 class Group(private val members: List<Rucksack>) {
 
     fun findCommonItem(): Int {

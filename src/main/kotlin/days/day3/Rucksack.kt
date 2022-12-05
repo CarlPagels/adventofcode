@@ -1,5 +1,7 @@
 package days.day3
 
+import days.toScore
+
 class Rucksack(private val firstCompartment: Set<Char>, private val secondCompartment: Set<Char>) {
 
     fun getAllItems(): Set<Char> {

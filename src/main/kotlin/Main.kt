@@ -3,6 +3,7 @@ import days.day1.DayOne
 import days.day2.DayTwo
 import days.day3.DayThree
 import days.day4.DayFour
+import days.day5.DayFive
 
 fun main() {
 
@@ -10,7 +11,8 @@ fun main() {
         DayOne(),
         DayTwo(),
         DayThree(),
-        DayFour()
+        DayFour(),
+        DayFive()
     )
     days.forEachIndexed { index, day ->
         println("Day ${index + 1}")

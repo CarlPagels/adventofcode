@@ -13,12 +13,14 @@ What u play: X for Rock, Y for Paper, and Z for Scissors
 
 class DayTwo : Day {
 
-    override fun partOne(): Int {
+    override fun partOne(): String {
         return playGame(getRounds(), 1)
+            .toString()
     }
 
-    override fun partTwo(): Int {
+    override fun partTwo(): String {
         return playGame(getRounds(), 2)
+            .toString()
     }
 
     private fun getRounds() = readFile("day2.txt")
