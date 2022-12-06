@@ -44,3 +44,15 @@ fun Char.toScore(): Int {
         else -> baseScore
     }
 }
+
+fun String.findUniqueCombination(amount: Int): String {
+    val characters = this.toCharArray().toList()
+    characters.forEachIndexed { index, _ ->
+        val uniqueCharacters = characters.subList(index, index + amount).toSet()
+        if (uniqueCharacters.size == amount) {
+            return (index + amount).toString()
+        }
+
+    }
+    return ""
+}
